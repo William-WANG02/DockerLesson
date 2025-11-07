@@ -1,0 +1,33 @@
+$:
+  vscode:
+    - docker:
+        build: 
+          dockerfile: .ide/Dockerfile
+          
+      runner:
+        tags: cnb:arch:amd64
+      services:
+        - vscode
+        - docker
+main:
+  pull_request:
+    - stages:
+      - name: do markdownlint
+        image: davidanson/markdownlint-cli2
+        commands: 
+        - markdownlint-cli2 **/*.md 
+  pull_request.mergeable:
+    - stages:
+        - name: automerge
+          type: git:auto-merge
+          options:
+            mergeType: squash
+            removeSourceBranch: true
+  push:
+    - stages:
+        - name: build knowledge base
+          image: cnbcool/knowledge-base
+          settings:
+            embedding_model: hunyuan
+            include: "**/**.md"
+            exclude: ""

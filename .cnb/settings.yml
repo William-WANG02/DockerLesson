@@ -1,0 +1,11 @@
+workspace:
+  launch:
+    button:
+      name: 一键学习
+      description: 理论为舟，实践为帆
+      hoverImage: 
+    autoOpenWebIDE: true
+fork:
+    button:
+      description: 学习使我快乐📚✨📖
+      hoverImage: 
