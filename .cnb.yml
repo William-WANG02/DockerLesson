@@ -1,6 +1,7 @@
 $:
   vscode:
     - docker:
+        image: docker.cnb.cool/docker-666/ccnu-camp/docker-exercises/dev-env:latest
         build: 
           dockerfile: .ide/Dockerfile
           
