@@ -1,5 +1,4 @@
-version: '3.8'
-
+# version 字段不推荐
 services:
   # Nginx 反向代理
   nginx:
