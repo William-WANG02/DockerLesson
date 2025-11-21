@@ -252,5 +252,5 @@ docker info | grep "Storage Driver"
 
 输出示例：
 ```
-Storage Driver: overlay2
+Storage Driver: overlay2 
 ```
